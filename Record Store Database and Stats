@@ -1,0 +1,26 @@
+--I created a record store database. 
+
+CREATE TABLE record_store (id INTEGER PRIMARY KEY, record_name TEXT, rating INTEGER, aisle INTEGER, price INTEGER);
+
+INSERT INTO record_store VALUES (1, "Thriller", 99, 7, 20);
+INSERT INTO record_store VALUES(2, "Nevermind", 100, 2, 15);
+INSERT INTO record_store VALUES(3, "Rumours", 89, 2, 27);
+INSERT INTO record_store VALUES(4, "Gorillaz", 78, 12, 23);
+INSERT INTO record_store VALUES(5, "Pink Friday", 67, 2, 21);
+INSERT INTO record_store VALUES(6, "Abbey Road", 87, 4, 14);
+INSERT INTO record_store VALUES(7, "Melodrama", 60, 4, 21);
+INSERT INTO record_store VALUES(8, "Revolver", 80, 4, 17);
+INSERT INTO record_store VALUES(9, "The Beatles [White Album]", 90, 4, 19);
+INSERT INTO record_store VALUES(10, "The Black Album", 91, 4, 29);
+INSERT INTO record_store VALUES(11, "Back to Black", 81, 4, 31);
+INSERT INTO record_store VALUES(12, "21", 81, 4, 15);
+INSERT INTO record_store VALUES(13, "A Night at The Opera", 91, 4, 19);
+INSERT INTO record_store VALUES(14, "Elephant", 91, 4, 10);
+INSERT INTO record_store VALUES(15, "I Never Loved a Man The Way I Love You", 100, 4, 28);
+
+--I'm grouping the records by aisle and displaying the average rating
+SELECT aisle, AVG(rating) FROM record_store 
+GROUP BY aisle;
+
+--I'm ordering the data by aisle
+SELECT *FROM record_store ORDER BY aisle;
